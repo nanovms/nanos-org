@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="The nanos unikernel runs your
+applications as secure, isolated virtual machines faster than bare metal
+installs.">
+    <meta name="keywords" content="linux unikernel, elf unikernel,
+process as unikernel, unikernel tool, unikernel runner, unikernel
+orchestrator, unikernel process management, unikernel security">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <title>FAQ — Nanos.org</title>
+</head>
+<body>
+<nav class="navigate">
+    <a style="height: 24px" href="/index">
+        <svg xmlns="http://www.w3.org/2000/svg" class="navigate__logo" width="152" height="24" viewBox="0 0 152 24"
+             fill="none">
+            <path d="M11 4.2L0 8.4V12.2 15.9L11 19.9C17 22.1 22 23.9 22.1 23.9 22.2 23.9 22.3 22.2 22.2 20.2L22.2 16.5 16.2 14.4C12.9 13.3 10.1 12.3 10.1 12.2 9.9 12.1 21.5 7.6 22 7.6 22.1 7.6 23.6 9.1 25.2 11 26.9 12.9 30.1 16.6 32.4 19.1 34.6 21.7 36.5 23.8 36.6 23.8 36.7 23.9 41.7 22 47.7 19.7L58.7 15.5V11.8 8L47.7 4C41.7 1.8 36.7 0 36.7 0 36.6 0 36.6 1.7 36.6 3.7L36.6 7.5 42.6 9.5C45.9 10.7 48.6 11.7 48.7 11.7 48.7 11.8 46.5 12.7 43.7 13.8 41 14.8 38.2 15.9 37.7 16.1L36.7 16.5 29.4 8.2C25.4 3.7 22.1 0 22.1 0 22 0 17 1.9 11 4.2ZM68.4 12.8V23.5H70.9 73.3L73.4 17 73.5 10.5 77.6 17 81.7 23.5 84.2 23.5 86.6 23.5V12.8 2.2H84.2 81.8L81.8 8.7 81.7 15.3 77.6 8.8 73.4 2.3 70.9 2.2 68.4 2.2V12.8ZM93.2 10.2C91.7 10.7 89.9 12.5 89.3 14.1 88.7 15.9 88.7 18.5 89.5 20 90.6 22.3 92.9 23.9 95.3 23.9 96.6 23.9 97.6 23.6 98.8 22.8L99.9 22.2V22.8 23.5H102.2 104.4V16.8 10.2H102.2 99.9V10.8C99.9 11.4 99.8 11.4 99.1 10.9 97.7 9.8 95.2 9.5 93.2 10.2ZM114.4 10.1C113.9 10.2 113.2 10.6 112.8 11L112 11.5V10.9 10.2H109.8 107.5V16.8 23.5H109.8 112V19.5C112 15.7 112.1 15.5 112.5 14.8 113.5 13.3 115.1 13 116.3 14.2L117 15V19.2 23.5H119.4 121.8V19.1C121.8 16.8 121.7 14.3 121.6 13.7 121.3 12.3 120.2 11 118.8 10.4 117.6 9.8 115.4 9.7 114.4 10.1ZM129.3 10.1C126.9 10.7 125.2 12.1 124.2 14 123.5 15.5 123.5 18.1 124.2 19.7 125.3 22.2 127.7 23.7 130.9 23.9 134.8 24.1 137.6 22.5 139 19.5 139.5 18.3 139.6 15.9 139.1 14.4 138.5 12.9 136.7 11.1 135 10.4 133.4 9.8 130.8 9.7 129.3 10.1ZM145 10.1C142.7 10.7 141.6 12 141.6 14.2 141.6 16 142.2 16.7 144.8 18 146.6 18.9 146.9 19.1 147 19.6 147 20.1 147 20.2 146.5 20.3 145.6 20.6 144.5 20.3 143.5 19.7 143.1 19.4 142.6 19.1 142.5 19.1 142.4 19.1 141.9 19.8 141.4 20.7L140.5 22.2 141 22.5C142.6 23.5 143.6 23.8 145.9 23.8 147.3 23.8 148.6 23.7 149 23.5 151.5 22.6 152.7 20 151.6 17.7 151.1 16.6 150.1 15.9 148 15.1 146.2 14.5 145.7 14.1 146.1 13.5 146.4 13 147.6 12.9 149.1 13.4L150.3 13.8 151.1 12.3 151.8 10.8 151 10.5C149.3 9.8 146.8 9.6 145 10.1ZM95.6 14C94.4 14.5 93.9 15.3 93.8 16.7 93.7 18.2 94.2 19.1 95.4 19.6 97.9 20.8 100.5 18.6 99.7 15.9 99.2 14.3 97.1 13.3 95.6 14ZM130.4 14C129.2 14.5 128.7 15.3 128.6 16.7 128.5 18.2 129 19.1 130.1 19.6 132.7 20.8 135.3 18.6 134.4 15.9 134 14.3 131.9 13.3 130.4 14Z"
+                  style="clip-rule:evenodd;fill-rule:evenodd;fill:white"/>
+        </svg>
+    </a>
+    <div class="navigate__box">
+        <ul class="navigate__links-text navigate__pc">
+            <a href="/thebook">
+                <li>The Book</li>
+            </a>
+            <a href="/faq">
+                <li>FAQ</li>
+            </a>
+            <a href="/getting_started">
+                <li>Get Started</li>
+            </a>
+            <a href="/community">
+                <li>Community</li>
+            </a>
+        </ul>
+        <div class="navigate__links-socials navigate__pc">
+            <ul class="navigate__links-socials">
+                <a href="https://github.com/nanovms/nanos" class="navigate__links-socials_pdr">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M7.7 18.7C7.7 18.6 7.6 18.5 7.5 18.5 7.4 18.5 7.3 18.6 7.3 18.7 7.3 18.8 7.4 18.8 7.5 18.8 7.6 18.8 7.7 18.8 7.7 18.7ZM6.3 18.4C6.3 18.5 6.4 18.7 6.5 18.7 6.6 18.7 6.8 18.7 6.8 18.6 6.8 18.5 6.8 18.4 6.6 18.3 6.5 18.3 6.3 18.3 6.3 18.4ZM8.4 18.4C8.3 18.4 8.2 18.5 8.2 18.6 8.2 18.7 8.3 18.8 8.4 18.7 8.6 18.7 8.7 18.6 8.6 18.5 8.6 18.4 8.5 18.3 8.4 18.4ZM11.4 0.4C5 0.4 0 5.3 0 11.8 0 17 3.2 21.5 7.9 23.1 8.5 23.2 8.7 22.8 8.7 22.5 8.7 22.2 8.7 20.6 8.7 19.6 8.7 19.6 5.4 20.3 4.7 18.2 4.7 18.2 4.2 16.8 3.5 16.5 3.5 16.5 2.4 15.8 3.5 15.8 3.5 15.8 4.7 15.8 5.3 17 6.4 18.8 8.1 18.3 8.8 18 8.9 17.2 9.1 16.7 9.5 16.4 6.9 16.1 4.2 15.7 4.2 11.2 4.2 9.9 4.6 9.3 5.3 8.4 5.2 8.1 4.8 6.9 5.5 5.3 6.4 5 8.7 6.5 8.7 6.5 9.7 6.2 10.6 6.1 11.6 6.1 12.7 6.1 13.6 6.2 14.6 6.5 14.6 6.5 16.8 4.9 17.8 5.3 18.5 6.9 18 8.1 18 8.4 18.7 9.3 19.2 9.9 19.2 11.2 19.2 15.7 16.4 16.1 13.8 16.4 14.2 16.7 14.6 17.4 14.6 18.6 14.6 20.1 14.5 22.1 14.5 22.5 14.5 22.8 14.8 23.2 15.4 23 20.1 21.5 23.3 17 23.3 11.8 23.3 5.3 18 0.4 11.4 0.4ZM4.5 16.5C4.5 16.6 4.5 16.7 4.5 16.8 4.6 16.9 4.7 16.9 4.8 16.9 4.9 16.8 4.9 16.7 4.8 16.6 4.7 16.5 4.6 16.5 4.5 16.5ZM4 16.2C4 16.3 4 16.3 4.1 16.4 4.2 16.4 4.3 16.4 4.4 16.3 4.4 16.3 4.3 16.2 4.2 16.2 4.1 16.1 4.1 16.1 4 16.2ZM5.5 17.9C5.5 17.9 5.5 18 5.6 18.1 5.7 18.2 5.9 18.3 5.9 18.2 6 18.1 6 18 5.9 17.9 5.8 17.8 5.6 17.8 5.5 17.9ZM5 17.2C4.9 17.2 4.9 17.3 5 17.4 5.1 17.5 5.2 17.6 5.3 17.5 5.3 17.5 5.3 17.3 5.3 17.3 5.2 17.2 5.1 17.1 5 17.2Z"
+                              fill="white"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/nanovms">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+                        <path d="M21.5 5.1C22.5 4.4 23.3 3.6 24 2.6 23.1 3 22.1 3.3 21.1 3.3 22.2 2.7 22.9 1.8 23.3 0.6 22.4 1.2 21.3 1.6 20.2 1.8 19.3 0.9 18 0.3 16.6 0.3 13.9 0.3 11.7 2.5 11.7 5.2 11.7 5.6 11.7 6 11.8 6.3 7.7 6.1 4.1 4.1 1.6 1.2 1.2 1.9 1 2.7 1 3.7 1 5.4 1.8 6.9 3.2 7.8 2.4 7.7 1.6 7.5 0.9 7.1V7.2C0.9 9.6 2.6 11.5 4.9 12 4.5 12.1 4 12.2 3.6 12.2 3.3 12.2 3 12.2 2.7 12.1 3.3 14.1 5.1 15.5 7.3 15.5 5.6 16.8 3.5 17.6 1.2 17.6 0.8 17.6 0.4 17.6 0 17.5 2.2 19 4.7 19.8 7.5 19.8 16.6 19.8 21.5 12.3 21.5 5.8 21.5 5.5 21.5 5.4 21.5 5.1Z"
+                              fill="white"/>
+                    </svg>
+                </a>
+            </ul>
+        </div>
+        <div class="navigate__mobile">
+            <input type='checkbox' class="navigate__mobile-menu">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+            <ul class="navigate__mobile-list">
+                <a href="/thebook">
+                    <li>The Book</li>
+                </a>
+                <a href="/faq">
+                    <li>FAQ</li>
+                </a>
+                <a href="/getting_started">
+                    <li>Get Started</li>
+                </a>
+                <a href="/community">
+                    <li class="navigate__mobile-list_last">Community</li>
+                </a>
+                <div class="navigate__links-socials_mobile">
+                    <a href="https://github.com/nanovms/nanos" class="navigate__links-socials_github-mobile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M7.7 18.7C7.7 18.6 7.6 18.5 7.5 18.5 7.4 18.5 7.3 18.6 7.3 18.7 7.3 18.8 7.4 18.8 7.5 18.8 7.6 18.8 7.7 18.8 7.7 18.7ZM6.3 18.4C6.3 18.5 6.4 18.7 6.5 18.7 6.6 18.7 6.8 18.7 6.8 18.6 6.8 18.5 6.8 18.4 6.6 18.3 6.5 18.3 6.3 18.3 6.3 18.4ZM8.4 18.4C8.3 18.4 8.2 18.5 8.2 18.6 8.2 18.7 8.3 18.8 8.4 18.7 8.6 18.7 8.7 18.6 8.6 18.5 8.6 18.4 8.5 18.3 8.4 18.4ZM11.4 0.4C5 0.4 0 5.3 0 11.8 0 17 3.2 21.5 7.9 23.1 8.5 23.2 8.7 22.8 8.7 22.5 8.7 22.2 8.7 20.6 8.7 19.6 8.7 19.6 5.4 20.3 4.7 18.2 4.7 18.2 4.2 16.8 3.5 16.5 3.5 16.5 2.4 15.8 3.5 15.8 3.5 15.8 4.7 15.8 5.3 17 6.4 18.8 8.1 18.3 8.8 18 8.9 17.2 9.1 16.7 9.5 16.4 6.9 16.1 4.2 15.7 4.2 11.2 4.2 9.9 4.6 9.3 5.3 8.4 5.2 8.1 4.8 6.9 5.5 5.3 6.4 5 8.7 6.5 8.7 6.5 9.7 6.2 10.6 6.1 11.6 6.1 12.7 6.1 13.6 6.2 14.6 6.5 14.6 6.5 16.8 4.9 17.8 5.3 18.5 6.9 18 8.1 18 8.4 18.7 9.3 19.2 9.9 19.2 11.2 19.2 15.7 16.4 16.1 13.8 16.4 14.2 16.7 14.6 17.4 14.6 18.6 14.6 20.1 14.5 22.1 14.5 22.5 14.5 22.8 14.8 23.2 15.4 23 20.1 21.5 23.3 17 23.3 11.8 23.3 5.3 18 0.4 11.4 0.4ZM4.5 16.5C4.5 16.6 4.5 16.7 4.5 16.8 4.6 16.9 4.7 16.9 4.8 16.9 4.9 16.8 4.9 16.7 4.8 16.6 4.7 16.5 4.6 16.5 4.5 16.5ZM4 16.2C4 16.3 4 16.3 4.1 16.4 4.2 16.4 4.3 16.4 4.4 16.3 4.4 16.3 4.3 16.2 4.2 16.2 4.1 16.1 4.1 16.1 4 16.2ZM5.5 17.9C5.5 17.9 5.5 18 5.6 18.1 5.7 18.2 5.9 18.3 5.9 18.2 6 18.1 6 18 5.9 17.9 5.8 17.8 5.6 17.8 5.5 17.9ZM5 17.2C4.9 17.2 4.9 17.3 5 17.4 5.1 17.5 5.2 17.6 5.3 17.5 5.3 17.5 5.3 17.3 5.3 17.3 5.2 17.2 5.1 17.1 5 17.2Z"
+                                  fill="white"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+                            <path d="M21.5 5.1C22.5 4.4 23.3 3.6 24 2.6 23.1 3 22.1 3.3 21.1 3.3 22.2 2.7 22.9 1.8 23.3 0.6 22.4 1.2 21.3 1.6 20.2 1.8 19.3 0.9 18 0.3 16.6 0.3 13.9 0.3 11.7 2.5 11.7 5.2 11.7 5.6 11.7 6 11.8 6.3 7.7 6.1 4.1 4.1 1.6 1.2 1.2 1.9 1 2.7 1 3.7 1 5.4 1.8 6.9 3.2 7.8 2.4 7.7 1.6 7.5 0.9 7.1V7.2C0.9 9.6 2.6 11.5 4.9 12 4.5 12.1 4 12.2 3.6 12.2 3.3 12.2 3 12.2 2.7 12.1 3.3 14.1 5.1 15.5 7.3 15.5 5.6 16.8 3.5 17.6 1.2 17.6 0.8 17.6 0.4 17.6 0 17.5 2.2 19 4.7 19.8 7.5 19.8 16.6 19.8 21.5 12.3 21.5 5.8 21.5 5.5 21.5 5.4 21.5 5.1Z"
+                                  fill="white"/>
+                        </svg>
+                    </a>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container top-mg middling" role="main">
+
+
+    <div class="right">
+        <h1 class="title title__main">
+            FAQ
+        </h1>
+        <p class="description right__description description__main">
+            Have a general question about Nanos? We answer the most common question below. Can’t find yours? <a
+                href="/community">Ask our community!</a>
+        </p>
+
+        <h2 class="title right__title">
+            How does Nanos compare to Linux?
+        </h2>
+        <p class="description right__description">
+            Linux is a general purpose operating system designed to run on actual hardware. Nanos is a single process
+            operating system designed to run as a virtual machine and has no support to run on hardware. Linux is
+            designed to run multiple processes with multiple users and has full interactivity support. Nanos has no
+            support for users or running multiple processes. Nanos fulfills a portion of the Linux syscall interface to
+            run linux applications natively.
+        </p>
+
+        <h2 class="title right__title">
+            How does Nanos compare to containers?
+        </h2>
+        <p class="description right__description">
+            Containers are pieces of the linux kernel and share a common kernel when provisioned on the same system.
+            This makes them widely insecure compared to a virtual machine. The biggest problem with containers is that
+            gaining access to one usually means access to the entire infrastructure.
+        </p>
+
+        <h2 class="title right__title">
+            How does Nanos compare to other unikernels?
+        </h2>
+        <p class="description right__description">
+
+          Glad you asked. We stole this quick table from <a
+href="https://github.com/cetic/unikernels">https://github.com/cetic/unikernels</a>:
+
+        </p>
+<table style="tr:nth-child(even) {background: #CCC};">
+  <tr>
+    <td>Unikernel</td><td>Language</td><td>Targets</td><td>Functions</td><td>Orchestration Avail?</td></tr>
+  </tr>
+  <tr>
+    <td>ClickOS</td><td>C++</td><td>Xen</td><td>Network Function Virtualization</td><td></td>
+  </tr>
+  <tr>
+    <td>HalVM</td><td>Haskell</td><td>Xen</td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>IncludeOS</td><td>C++</td><td>KVM, VirtualBox, ESXi, Google
+Cloud, OpenStack</td><td></td><td>yes</td>
+  </tr>
+  <tr>
+    <td>MirageOS</td><td>OCaml</td><td>KVM, Xen</td><td>RTOS/MCU</td><td></td>
+  </tr>
+  <tr>
+    <td>Nanos</td><td>C, C++, Go, Java, Node.js, Python, Rust, Ruby,
+PHP, any, etc</td><td>QEMU/KVM, XEN, ESXi, Amazon EC2, Google Cloud,
+HyperV, Oracle, RPI4</td><td>cloud, edge</td><td>yes</td>
+  </tr>
+  <tr>
+    <td>OSv</td><td>Java, C, C++, Node, Ruby</td><td>VirtualBox, ESXi, KVM, Amazon EC2, Google Cloud</td><td>Cloud and IoT (ARM)</td><td>yes</td></tr>
+  <tr>
+    <td>Rumprun</td><td>C, C++, Erlang, Go, Java, JavaScript, Node.js, Python, Ruby,
+Rust</td><td>Xen, KVM</td><td></td><td></td>
+  </tr>
+  <tr>
+    <td>ToroKernel</td><td>FreePascal</td><td>VirtualBox, KVM, XEN, HyperV</td><td>dedicated to run microservices</td><td></td>
+  </tr>
+  <tr>
+    <td>Unikraft</td><td>C, C++, Rust, GO, Python etc.</td><td>KVM, XEN, Linux</td><td></td><td>Yes</td>
+  </tr>
+</table>
+
+<br>
+         <p class="description right__description">
+ Another big difference is that Nanos keeps the kernel/user boundary.
+In our testing removing the large process to process context switching
+that general purpose operating systems still removes quite a lot of the
+pereived cost in other systems. We keep the internal kernel <> user
+switch for security purposes. Without it page protections are basically
+useless as an attacker can adjust the permissions themselves with
+privileged instructions.
+        </p>
+
+        <h2 class="title right__title">
+            Why don't I get the same benchmarks as you?
+        </h2>
+        <p class="description right__description">
+          Benchmarks can vary widely depending on a variety of factors.
+For some platforms and some languages we are much faster than Linux
+while for others we have work to do. For instance KVM via Google Cloud
+works great for Go applications but the JVM on AWS is currently slower.
+Likewise just because networking throughput might be good doesn't
+necessarily mean I/O writes are as good.
+Different hypervisors utilize different drivers and we can have varrying
+support for those. Additionally certain languages utilize certain
+features we might have gotten to run but not have fully hashed out. Most
+of our tests are currently targeting 1 vCPU but we plan on having more
+SMP targets in the future.
+        To be as transparent as possible we plan on including automated test
+results in the near future.
+          When running your own benchmarks it is necessary to be precise
+on what you are testing. Be careful to use the same instance size tested
+from the same class c
+network and same region for instance.
+        </p>
+
+        <h2 class="title right__title">
+            Does this work under Kubernetes?
+        </h2>
+        <p class="description right__description">
+        Yes, but we caution users to evaluate if you really need
+kubernetes. Chances are you don't and you will experience severe
+performance and security problems if you choose to run under k8s. If you
+still find you must <a
+href="https://nanovms.gitbook.io/ops/k8s">here</a> are instructions for running Nanos under k8s.
+        </p>
+
+        <h2 class="title right__title">
+          Doesn't this require the same complexity as Kubernetes or
+other platforms?
+        </h2>
+        <p class="description right__description">
+        Great question - no! The complexity that comes with kubernetes
+is that it requires you to re-invent all the layers of a cloud platform
+that already exists. If you run a vanilla linux instance on AWS you get
+out of the box: networking, storage, security, routing, etc all for
+free. Compare that to the cloud native world where every layer has to be
+replicated. It's a common misconception that Nanos needs to be
+provisioned on top of a linux instance. The underlying hypervisor might
+be running linux but if you are running on something like AWS or Google
+Cloud we provision the unikernel as it's own ami/disk image with no
+linux in it. So you get to reap all the same benefits that you get of
+running normal linux instances with the isolation, performance and
+security of Nanos unikernels.
+        </p>
+
+        <h2 class="title right__title">
+          Does this Work for My Mac M1 or M2?
+        </h2>
+        <p class="description right__description">
+The Apple M1 and M2 are ARM based. OPS is built for users primarily
+deploying to x86 based servers. We now have full support for running
+native ARM applications (ELFs) on M1 and M2s natively. That means
+without relying on Rosetta and with full hardware acceleration.
+</p>
+
+<p>Be aware that if you wish to deploy your applications to x86 servers
+you'll need to re-build your images as x86 versus the default of arm64.
+        </p>
+
+        <h2 class="title right__title">
+          Why Doesn't Nanos Have Users?
+        </h2>
+        <p class="description right__description">
+          Nanos is not Linux. Nanos has no users because it only can run
+one single program. Users make a lot of sense on Linux because Linux is
+designed to run many different programs by many different users. This
+prevents one program running by a different user from interfering with
+another program from another user. Instead of having a general purpose
+operating system such as Linux handle users and programs Nanos opts to
+shift that burden onto the hypervisor/cloud itself. This also means that you
+can't SSH into a Nanos instance or run any commands in a shell. You can
+code this functionality into your unikernel if you so desire but you
+still won't be able to 'shell out'. To further drill into this, it also
+means there is no 'interactivity' with the unikernel other than what you
+expose it to over the network. While some cloud providers can have their
+serial console exposed there is no TTY or way to send it commands. The
+program is running or it isn't.
+        </p>
+
+        <a href="/community">
+            <button class="button right__description_last">I have another question</button>
+        </a>
+
+    </div>
+</main>
+
+<footer class="block footer__pc">
+    <div class="footer__box">
+        <span>Copyright © 2024 NanoVMs Inc. All rights reserved.</span>
+        <a class="footer__link footer__link_reset-mg" href="https://nanovms.com/">
+            <span>NanoVMs</span>
+        </a>
+    </div>
+    <div class="footer__box">
+        <div>
+            <a class="footer__link" href="/privacy">
+                <span>Privacy Policy</span>
+            </a>
+            <a class="footer__link" href="/terms">
+                <span>Terms of Service</span>
+            </a>
+        </div>
+        <div>
+            <a class="footer__link" href="https://twitter.com/nanovms">
+                <span>Twitter</span>
+            </a>
+            <a class="footer__link" href="https://github.com/nanovms/nanos">
+                <span>Github</span>
+            </a>
+            <a class="footer__link" href="https://groups.google.com/a/nanovms.com/g/nanos-users">
+                <span>Mailing List</span>
+            </a>
+            <a class="footer__link footer__link_reset-mg" href="#">
+                <span>IRC</span>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<footer class="block footer__mobile">
+    <div class="footer__box">
+        <span>Copyright © 2024 NanoVMs Inc. All rights reserved.</span>
+        <div class="footer__box-wrap">
+            <a class="footer__link" href="/privacy">
+                <span>Privacy Policy</span>
+            </a>
+            <a class="footer__link" href="/terms">
+                <span>Terms of Service</span>
+            </a>
+            <a class="footer__link" href="https://nanovms.com/">
+                <span>NanoVMs</span>
+            </a>
+            <a class="footer__link" href="https://nanovms.com/services/subscription">
+                <span>Commercial Support</span>
+            </a>
+            <a class="footer__link" href="https://forums.nanovms.com">
+                <span>Forums</span>
+            </a>
+ 
+            <a class="footer__link" href="https://twitter.com/nanovms">
+                <span>Twitter</span>
+            </a>
+            <a class="footer__link" href="https://github.com/nanovms/nanos">
+                <span>GitHub</span>
+            </a>
+            <a class="footer__link" href="https://groups.google.com/a/nanovms.com/g/nanos-users">
+                <span>Mailing List</span>
+            </a>
+            <a class="footer__link" href="#">
+                <span>IRC</span>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script src="/static/index.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async
+src="https://www.googletagmanager.com/gtag/js?id=G-Q7BKSVLQ4K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q7BKSVLQ4K');
+</script>
+</body>
+</html>

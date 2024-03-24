@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="The nanos unikernel runs your
+applications as secure, isolated virtual machines faster than bare metal
+installs.">
+    <meta name="keywords" content="linux unikernel, elf unikernel,
+process as unikernel, unikernel tool, unikernel runner, unikernel
+orchestrator, unikernel process management, unikernel security">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
+    <title>The Book — Nanos.org</title>
+</head>
+<body>
+<nav class="navigate">
+    <a style="height: 24px" href="/index">
+        <svg xmlns="http://www.w3.org/2000/svg" class="navigate__logo" width="152" height="24" viewBox="0 0 152 24"
+             fill="none">
+            <path d="M11 4.2L0 8.4V12.2 15.9L11 19.9C17 22.1 22 23.9 22.1 23.9 22.2 23.9 22.3 22.2 22.2 20.2L22.2 16.5 16.2 14.4C12.9 13.3 10.1 12.3 10.1 12.2 9.9 12.1 21.5 7.6 22 7.6 22.1 7.6 23.6 9.1 25.2 11 26.9 12.9 30.1 16.6 32.4 19.1 34.6 21.7 36.5 23.8 36.6 23.8 36.7 23.9 41.7 22 47.7 19.7L58.7 15.5V11.8 8L47.7 4C41.7 1.8 36.7 0 36.7 0 36.6 0 36.6 1.7 36.6 3.7L36.6 7.5 42.6 9.5C45.9 10.7 48.6 11.7 48.7 11.7 48.7 11.8 46.5 12.7 43.7 13.8 41 14.8 38.2 15.9 37.7 16.1L36.7 16.5 29.4 8.2C25.4 3.7 22.1 0 22.1 0 22 0 17 1.9 11 4.2ZM68.4 12.8V23.5H70.9 73.3L73.4 17 73.5 10.5 77.6 17 81.7 23.5 84.2 23.5 86.6 23.5V12.8 2.2H84.2 81.8L81.8 8.7 81.7 15.3 77.6 8.8 73.4 2.3 70.9 2.2 68.4 2.2V12.8ZM93.2 10.2C91.7 10.7 89.9 12.5 89.3 14.1 88.7 15.9 88.7 18.5 89.5 20 90.6 22.3 92.9 23.9 95.3 23.9 96.6 23.9 97.6 23.6 98.8 22.8L99.9 22.2V22.8 23.5H102.2 104.4V16.8 10.2H102.2 99.9V10.8C99.9 11.4 99.8 11.4 99.1 10.9 97.7 9.8 95.2 9.5 93.2 10.2ZM114.4 10.1C113.9 10.2 113.2 10.6 112.8 11L112 11.5V10.9 10.2H109.8 107.5V16.8 23.5H109.8 112V19.5C112 15.7 112.1 15.5 112.5 14.8 113.5 13.3 115.1 13 116.3 14.2L117 15V19.2 23.5H119.4 121.8V19.1C121.8 16.8 121.7 14.3 121.6 13.7 121.3 12.3 120.2 11 118.8 10.4 117.6 9.8 115.4 9.7 114.4 10.1ZM129.3 10.1C126.9 10.7 125.2 12.1 124.2 14 123.5 15.5 123.5 18.1 124.2 19.7 125.3 22.2 127.7 23.7 130.9 23.9 134.8 24.1 137.6 22.5 139 19.5 139.5 18.3 139.6 15.9 139.1 14.4 138.5 12.9 136.7 11.1 135 10.4 133.4 9.8 130.8 9.7 129.3 10.1ZM145 10.1C142.7 10.7 141.6 12 141.6 14.2 141.6 16 142.2 16.7 144.8 18 146.6 18.9 146.9 19.1 147 19.6 147 20.1 147 20.2 146.5 20.3 145.6 20.6 144.5 20.3 143.5 19.7 143.1 19.4 142.6 19.1 142.5 19.1 142.4 19.1 141.9 19.8 141.4 20.7L140.5 22.2 141 22.5C142.6 23.5 143.6 23.8 145.9 23.8 147.3 23.8 148.6 23.7 149 23.5 151.5 22.6 152.7 20 151.6 17.7 151.1 16.6 150.1 15.9 148 15.1 146.2 14.5 145.7 14.1 146.1 13.5 146.4 13 147.6 12.9 149.1 13.4L150.3 13.8 151.1 12.3 151.8 10.8 151 10.5C149.3 9.8 146.8 9.6 145 10.1ZM95.6 14C94.4 14.5 93.9 15.3 93.8 16.7 93.7 18.2 94.2 19.1 95.4 19.6 97.9 20.8 100.5 18.6 99.7 15.9 99.2 14.3 97.1 13.3 95.6 14ZM130.4 14C129.2 14.5 128.7 15.3 128.6 16.7 128.5 18.2 129 19.1 130.1 19.6 132.7 20.8 135.3 18.6 134.4 15.9 134 14.3 131.9 13.3 130.4 14Z"
+                  style="clip-rule:evenodd;fill-rule:evenodd;fill:white"/>
+        </svg>
+    </a>
+    <div class="navigate__box">
+        <ul class="navigate__links-text navigate__pc">
+            <a href="/thebook">
+                <li>The Book</li>
+            </a>
+            <a href="/faq">
+                <li>FAQ</li>
+            </a>
+            <a href="/getting_started">
+                <li>Get Started</li>
+            </a>
+            <a href="/community">
+                <li>Community</li>
+            </a>
+        </ul>
+        <div class="navigate__links-socials navigate__pc">
+            <ul class="navigate__links-socials">
+                <a href="https://github.com/nanovms/nanos" class="navigate__links-socials_pdr">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M7.7 18.7C7.7 18.6 7.6 18.5 7.5 18.5 7.4 18.5 7.3 18.6 7.3 18.7 7.3 18.8 7.4 18.8 7.5 18.8 7.6 18.8 7.7 18.8 7.7 18.7ZM6.3 18.4C6.3 18.5 6.4 18.7 6.5 18.7 6.6 18.7 6.8 18.7 6.8 18.6 6.8 18.5 6.8 18.4 6.6 18.3 6.5 18.3 6.3 18.3 6.3 18.4ZM8.4 18.4C8.3 18.4 8.2 18.5 8.2 18.6 8.2 18.7 8.3 18.8 8.4 18.7 8.6 18.7 8.7 18.6 8.6 18.5 8.6 18.4 8.5 18.3 8.4 18.4ZM11.4 0.4C5 0.4 0 5.3 0 11.8 0 17 3.2 21.5 7.9 23.1 8.5 23.2 8.7 22.8 8.7 22.5 8.7 22.2 8.7 20.6 8.7 19.6 8.7 19.6 5.4 20.3 4.7 18.2 4.7 18.2 4.2 16.8 3.5 16.5 3.5 16.5 2.4 15.8 3.5 15.8 3.5 15.8 4.7 15.8 5.3 17 6.4 18.8 8.1 18.3 8.8 18 8.9 17.2 9.1 16.7 9.5 16.4 6.9 16.1 4.2 15.7 4.2 11.2 4.2 9.9 4.6 9.3 5.3 8.4 5.2 8.1 4.8 6.9 5.5 5.3 6.4 5 8.7 6.5 8.7 6.5 9.7 6.2 10.6 6.1 11.6 6.1 12.7 6.1 13.6 6.2 14.6 6.5 14.6 6.5 16.8 4.9 17.8 5.3 18.5 6.9 18 8.1 18 8.4 18.7 9.3 19.2 9.9 19.2 11.2 19.2 15.7 16.4 16.1 13.8 16.4 14.2 16.7 14.6 17.4 14.6 18.6 14.6 20.1 14.5 22.1 14.5 22.5 14.5 22.8 14.8 23.2 15.4 23 20.1 21.5 23.3 17 23.3 11.8 23.3 5.3 18 0.4 11.4 0.4ZM4.5 16.5C4.5 16.6 4.5 16.7 4.5 16.8 4.6 16.9 4.7 16.9 4.8 16.9 4.9 16.8 4.9 16.7 4.8 16.6 4.7 16.5 4.6 16.5 4.5 16.5ZM4 16.2C4 16.3 4 16.3 4.1 16.4 4.2 16.4 4.3 16.4 4.4 16.3 4.4 16.3 4.3 16.2 4.2 16.2 4.1 16.1 4.1 16.1 4 16.2ZM5.5 17.9C5.5 17.9 5.5 18 5.6 18.1 5.7 18.2 5.9 18.3 5.9 18.2 6 18.1 6 18 5.9 17.9 5.8 17.8 5.6 17.8 5.5 17.9ZM5 17.2C4.9 17.2 4.9 17.3 5 17.4 5.1 17.5 5.2 17.6 5.3 17.5 5.3 17.5 5.3 17.3 5.3 17.3 5.2 17.2 5.1 17.1 5 17.2Z"
+                              fill="white"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/nanovms">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+                        <path d="M21.5 5.1C22.5 4.4 23.3 3.6 24 2.6 23.1 3 22.1 3.3 21.1 3.3 22.2 2.7 22.9 1.8 23.3 0.6 22.4 1.2 21.3 1.6 20.2 1.8 19.3 0.9 18 0.3 16.6 0.3 13.9 0.3 11.7 2.5 11.7 5.2 11.7 5.6 11.7 6 11.8 6.3 7.7 6.1 4.1 4.1 1.6 1.2 1.2 1.9 1 2.7 1 3.7 1 5.4 1.8 6.9 3.2 7.8 2.4 7.7 1.6 7.5 0.9 7.1V7.2C0.9 9.6 2.6 11.5 4.9 12 4.5 12.1 4 12.2 3.6 12.2 3.3 12.2 3 12.2 2.7 12.1 3.3 14.1 5.1 15.5 7.3 15.5 5.6 16.8 3.5 17.6 1.2 17.6 0.8 17.6 0.4 17.6 0 17.5 2.2 19 4.7 19.8 7.5 19.8 16.6 19.8 21.5 12.3 21.5 5.8 21.5 5.5 21.5 5.4 21.5 5.1Z"
+                              fill="white"/>
+                    </svg>
+                </a>
+            </ul>
+        </div>
+        <div class="navigate__mobile">
+            <input type='checkbox' class="navigate__mobile-menu">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+            <ul class="navigate__mobile-list">
+                <a href="/thebook">
+                    <li>The Book</li>
+                </a>
+                <a href="/faq">
+                    <li>FAQ</li>
+                </a>
+                <a href="/getting_started">
+                    <li>Get Started</li>
+                </a>
+                <a href="/community">
+                    <li class="navigate__mobile-list_last">Community</li>
+                </a>
+                <div class="navigate__links-socials_mobile">
+                    <a href="https://github.com/nanovms/nanos" class="navigate__links-socials_github-mobile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M7.7 18.7C7.7 18.6 7.6 18.5 7.5 18.5 7.4 18.5 7.3 18.6 7.3 18.7 7.3 18.8 7.4 18.8 7.5 18.8 7.6 18.8 7.7 18.8 7.7 18.7ZM6.3 18.4C6.3 18.5 6.4 18.7 6.5 18.7 6.6 18.7 6.8 18.7 6.8 18.6 6.8 18.5 6.8 18.4 6.6 18.3 6.5 18.3 6.3 18.3 6.3 18.4ZM8.4 18.4C8.3 18.4 8.2 18.5 8.2 18.6 8.2 18.7 8.3 18.8 8.4 18.7 8.6 18.7 8.7 18.6 8.6 18.5 8.6 18.4 8.5 18.3 8.4 18.4ZM11.4 0.4C5 0.4 0 5.3 0 11.8 0 17 3.2 21.5 7.9 23.1 8.5 23.2 8.7 22.8 8.7 22.5 8.7 22.2 8.7 20.6 8.7 19.6 8.7 19.6 5.4 20.3 4.7 18.2 4.7 18.2 4.2 16.8 3.5 16.5 3.5 16.5 2.4 15.8 3.5 15.8 3.5 15.8 4.7 15.8 5.3 17 6.4 18.8 8.1 18.3 8.8 18 8.9 17.2 9.1 16.7 9.5 16.4 6.9 16.1 4.2 15.7 4.2 11.2 4.2 9.9 4.6 9.3 5.3 8.4 5.2 8.1 4.8 6.9 5.5 5.3 6.4 5 8.7 6.5 8.7 6.5 9.7 6.2 10.6 6.1 11.6 6.1 12.7 6.1 13.6 6.2 14.6 6.5 14.6 6.5 16.8 4.9 17.8 5.3 18.5 6.9 18 8.1 18 8.4 18.7 9.3 19.2 9.9 19.2 11.2 19.2 15.7 16.4 16.1 13.8 16.4 14.2 16.7 14.6 17.4 14.6 18.6 14.6 20.1 14.5 22.1 14.5 22.5 14.5 22.8 14.8 23.2 15.4 23 20.1 21.5 23.3 17 23.3 11.8 23.3 5.3 18 0.4 11.4 0.4ZM4.5 16.5C4.5 16.6 4.5 16.7 4.5 16.8 4.6 16.9 4.7 16.9 4.8 16.9 4.9 16.8 4.9 16.7 4.8 16.6 4.7 16.5 4.6 16.5 4.5 16.5ZM4 16.2C4 16.3 4 16.3 4.1 16.4 4.2 16.4 4.3 16.4 4.4 16.3 4.4 16.3 4.3 16.2 4.2 16.2 4.1 16.1 4.1 16.1 4 16.2ZM5.5 17.9C5.5 17.9 5.5 18 5.6 18.1 5.7 18.2 5.9 18.3 5.9 18.2 6 18.1 6 18 5.9 17.9 5.8 17.8 5.6 17.8 5.5 17.9ZM5 17.2C4.9 17.2 4.9 17.3 5 17.4 5.1 17.5 5.2 17.6 5.3 17.5 5.3 17.5 5.3 17.3 5.3 17.3 5.2 17.2 5.1 17.1 5 17.2Z"
+                                  fill="white"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+                            <path d="M21.5 5.1C22.5 4.4 23.3 3.6 24 2.6 23.1 3 22.1 3.3 21.1 3.3 22.2 2.7 22.9 1.8 23.3 0.6 22.4 1.2 21.3 1.6 20.2 1.8 19.3 0.9 18 0.3 16.6 0.3 13.9 0.3 11.7 2.5 11.7 5.2 11.7 5.6 11.7 6 11.8 6.3 7.7 6.1 4.1 4.1 1.6 1.2 1.2 1.9 1 2.7 1 3.7 1 5.4 1.8 6.9 3.2 7.8 2.4 7.7 1.6 7.5 0.9 7.1V7.2C0.9 9.6 2.6 11.5 4.9 12 4.5 12.1 4 12.2 3.6 12.2 3.3 12.2 3 12.2 2.7 12.1 3.3 14.1 5.1 15.5 7.3 15.5 5.6 16.8 3.5 17.6 1.2 17.6 0.8 17.6 0.4 17.6 0 17.5 2.2 19 4.7 19.8 7.5 19.8 16.6 19.8 21.5 12.3 21.5 5.8 21.5 5.5 21.5 5.4 21.5 5.1Z"
+                                  fill="white"/>
+                        </svg>
+                    </a>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container top-mg" role="main">
+    <div class="left">
+        <a href="#filesystem"><span>Filesystem</span></a>
+        <a href="#networking"><span>Networking</span></a>
+        <a href="#performance"><span>Performance</span></a>
+        <a href="#security"><span>Security</span></a>
+        <a href="#architecture"><span>Architecture</span></a>
+        <a href="#infrastructure"><span>Infrastructure</span></a>
+        <a href="#syscalls"><span>Syscalls</span></a>
+        <a href="#features"><span>Features</span></a>
+        <a href="#tools"><span>Tools</span></a>
+        <a href="#manifest"><span>Manifest</span></a>
+        <a href="#data_structures"><span>Data Structures</span></a>
+   </div>
+
+    <div class="right">
+        <h1 class="title title__main">
+            The Book
+        </h1>
+        <p class="description right__description description__main">
+            Some things in Nanos are set in stone and others are not. In general security and performance are top of mind and we abide by KISS principles.
+
+            <br><br>
+
+             Quick FYI: This site is mainly for Nanos specific
+information. If you are an end-user and you just want more "getting
+started" docs please check out the DOCS on <a
+href="https://ops.city">OPS.CITY</a> which are substantial.
+
+            <br><br>
+            <u style="font-weight: strong">This site is a WIP
+(work in progress).</u>
+        </p>
+
+        <div class="left__mobile">
+            <a href="#filesystem"><span>Filesystem</span></a>
+            <a href="#networking"><span>Networking</span></a>
+            <a href="#performance"><span>Performance</span></a>
+            <a href="#security"><span>Security</span></a>
+            <a href="#architecture"><span>Architecture</span></a>
+            <a href="#infrastructure"><span>Infrastructure</span></a>
+            <a href="#syscalls"><span>Syscalls</span></a>
+            <a href="#features"><span>Features</span></a>
+            <a href="#tools"><span>Tools</span></a>
+            <a href="#manifest"><span>Manifest</span></a>
+            <a href="#data_structures"><span>Data Structures</span></a>
+        </div>
+
+        <h2 id="filesystem" class="title right__title">
+            Filesystem
+        </h2>
+        <p class="description right__description">
+            The filesystem currently used by Nanos is TFS. Nanos isn't opposed to other file systems but hasn't
+            identified a large need yet either. As with most of these sections if your team requires different
+            filesystem support please reach out to the NanoVMs team for a support subscription.<br><br> For <a
+                href="https://github.com/nanovms/nanos/wiki/tuple-serialization-format">more info</a> on the TFS
+            filesystem.
+        </p>
+        <p class="description right__description">
+        Nanos supports the following storage drivers:<br>
+        virtio_blk<br>
+        virtio_scsi<br>
+        pvscsi<br>
+        nvme<br>
+        ata_pci<br>
+        storvsc<br>
+        xenblk<br>
+        <br>Storvsc is used on Hyper-v/Azure. The drivers virtio_blk and virtio_scsi are used in QEMU/KVM cloud-based like AWS, GCE, Vultr, Digital Ocean and Oracle cloud. The xenblk driver supports the xenblk device in Xen. The ata_pci driver is supported in QEMU/KVM. The pvscsi, which is the driver for VMware paravirtualized scsi devices, is used in ESX instances. The driver for nvme can be used in clouds like GCE, AWS, Digital Ocean and Vultr.
+        </p>
+        <h2 id="networking" class="title right__title">
+            Networking
+        </h2>
+        <p class="description right__description">
+            Nanos supports both IPV4 and IPV6. For more information on configuring things like VPCs, firewalls and the like please consult the <a href="https://nanovms.gitbook.io/ops/networking">OPS networking config pages</a> for your specific cloud.
+        </p>
+
+
+        <h2 id="performance" class="title right__title">
+            Performance
+        </h2>
+        <p class="description right__description">
+          <h3>Requests/Second</h3>
+
+            Not a lot of benchmarking and tuning has been done yet, however, there is plenty of potential. Currently,
+            our naive tests can push 2X the amount of requests/second for Go webservers. This website is hosted on a Go
+            webserver running a recent 0.1.27 version of Nanos. We've also seen up to 3X improvements on AWS.
+
+            <img src="https://nanos.org/static/img/compare-chart.svg"/>
+
+          <h3>Boot Time</h3>
+        Using the method described <a
+href="https://stefano-garzarella.github.io/posts/2019-08-24-qemu-linux-boot-time/">here</a>
+with an un-stripped kernel we are seeing boot times of ~195ms from top
+of MBR bootloader to userspace frame return. However if you use a
+stripped kernel we can see 72ms. It should be noted that both
+infrastructure provider and application payload are going to
+significantly alter your boot time. For instance booting under
+firecracker with your own hardware is going to vastly out-perform
+booting on Azure. Likewise, booting a small c webserver is going to be
+much faster than booting a full blown Rails or JVM application. In
+short, the biggger the filesystem payload expect to pay more in boot
+time.
+
+      <h3>Minimum Memory Utilization</h3>
+
+      Currently the minimum memory utilization we have seen operate
+under the following conditions:
+
+      <table>
+        <tr>
+          <td>Qemu:</td><td>C 26 MB</td><td>Go 40 MB</td>
+        </tr>
+          <td>Firecracker:</td><td>C 24 MB</td><td>Go 37 MB</td>
+        </tr>
+          <td>VirtualBox:</td><td>C 24 MB</td><td>Go 36 MB</td>
+        </tr>
+      </table>
+
+        </p>
+
+        <h2 id="security" class="title right__title">
+            Security
+        </h2>
+        <p class="description right__description">
+            Nanos has an opionated view of security. Users and their associated permissions are not supported. Nanos is
+            also a single process (but multi-threaded) system. This means there is no support for SSH, shells or any
+            other interactive multiple command/program running. While this prevents quite a few security issues extra
+            precaution should be taken for things such as RFI style attacks. For instance you wouldn't want to leak your
+            SSL private key or database credentials.<br><br> Similarily, just cause you can't create a new process
+            doesn't mean an attacker couldn't inject their process.<br><br> Nanos employs various forms of security
+            measures found in other general purpose operating systems including ASLR and respects page protections that
+            compilers produce.<br><br> Nanos, unlike other general purpose operating systems, only provision what is
+            necessary on the filesystem to run an application so most filesystems will have a few to maybe 10 libraries
+            and many applications might have filesystems with only a handful of files on them.<br><br>Nanos's kernel
+            lives on a different partition and is separated from the user-viewable partition. Nanos goes further with
+            the idea of exec protection with an optional exec_protection flag available in the manifest. When this is
+            enabled the application cannot modify the executable files and cannot create new executable files. For
+            further information check out this <a href="https://github.com/nanovms/nanos/pull/1251">PR</a>.<br><br> For
+            more info: <a href="https://github.com/nanovms/nanos/blob/master/SECURITY.md">more info</a>
+
+            <img src="/static/img/attack-surface.png"/>
+            <br/>
+
+            Nanos reduces its attack surface through a variety of
+thrusts.  Compared to a normal Ubuntu or Debian instance has multiple
+orders of magnitude less lines of code, libraries only that are needed
+by an application and thousands of less executables - in fact it only
+can run one.
+
+          <br/>
+          Nanos employs the following:
+          <br/>
+
+          <h3>ASLR:</h3>
+          <ul>
+            <li>Stack Randomization</li>
+            <li>Heap Randomization</li>
+            <li>Library Randomization</li>
+            <li>Binary Randomization</li>
+          </ul>
+          <br/>
+
+          <h3>Page Protections:</h3>
+          <ul>
+            <li>Stack Execution off by Default</li>
+            <li>Heap Execution off by Default</li>
+            <li>Null Page is Not Mapped</li>
+            <li>Stack Cookies/Canaries</li>
+            <li>Rodata no execute</li>
+            <li>Text no write</li>
+          </ul>
+          <br/>
+
+          <h3>Architecture-level Security Technologies:</h3>
+          <ul>
+            <li>Supervisor Mode Execution Protection (SMEP)</li>
+            <li>User Mode Instruction Prevention (UMIP)</li>
+          </ul>
+
+        <br/>
+        </p>
+        <p class="description right__description">
+          In addition to storing global constants in read-only pages at link
+          time, Nanos gathers globals that should only be set at
+          initialization time and stores them in a special section. The pages
+          of this section are then rendered immutable after initialization is
+          complete.
+        </p>
+
+        <p class="description right__description">
+          Code pages in Nanos have writes disabled, and execution of code in
+          stack pages is forbidden. In the few cases that Nanos generates
+          executable instructions (for vdso and vsyscall use), such code is
+          similarly protected from writes. Closures do not contain jumps or
+          other executable instructions.
+        </p>
+        <p class="description right__description">
+      Nanos has an 'exec protection' feature that prevents the kernel from
+      executing any code outside the main executable and other 'trusted' files
+      explicitly marked. The program is further limited from modifying the
+      executable file and creating new ones. This flag may also be used on
+      individual files within the children tuple. This prevents the
+      application from exec-mapping anything that is not explicitly mapped as
+      executable.
+      This is not on by default, however, as many JITs won't work with it
+      turned on.
+
+You can turn this on via the ops flag:
+
+<pre><code>{
+  "ManifestPassthrough": {
+    "exec_protection": "t"
+  }
+}</code></pre>
+
+</p>
+ 
+        <h2 id="architecture" class="title right__title">
+            Architecture
+        </h2>
+        <p class="description right__description">
+            Currently Nanos supports X86-64, ARM64 (specifically for rpi4, graviton 2/3 instances and has SMP) and has limited RISC-V support.<br><br>
+            The POWER family of architectures have been asked for but so far there is no roadmap for it. If you are interested in getting that sooner reach out to the NanoVMs team.
+        <br/>
+        <img src="/static/img/vms-vs-unikernels.png"/>
+        <br/>
+        Nanos is always deployed as a guest VM directly on top of a
+hypervisor. Unlike Linux that runs many different applications on top of
+it Nanos molds the system and application into one discrete unit. Unlike
+Containers that duplicate storage and networking layers with an
+orchestrator in between Linux and the application Nanos relies on the
+native storage and networking layers present in the hypervisor of
+choice.
+        </p>
+
+        <h2 id="infrastructure" class="title right__title">
+            Infrastructure
+        </h2>
+        <p class="description right__description">
+            Nanos can currently deploy to the following public cloud providers:<br><br>
+            → <a href="https://nanovms.gitbook.io/ops/google_cloud">Google Cloud</a><br>
+            → <a href="https://nanovms.gitbook.io/ops/aws">Amazon Web Services</a><br>
+            → <a href="https://nanovms.gitbook.io/ops/digital_ocean">Digital Ocean</a><br>
+            → <a href="https://nanovms.gitbook.io/ops/vultr">Vultr</a><br>
+            → <a href="https://nanovms.gitbook.io/ops/azure">Microsoft Azure</a><br>
+            → <a href="https://nanovms.gitbook.io/ops/oci">Oracle Cloud</a><br>
+            → <a href="https://nanovms.gitbook.io/ops/upcloud">UpCloud</a><br><br>
+            → <a href="https://nanovms.gitbook.io/ops/openstack">OpenStack</a><br><br>
+            → <a href="https://nanovms.gitbook.io/ops/proxmox">ProxMox</a><br><br>
+            Nanos can also deploy to the following hypervisors:<br><br>
+            → KVM<br>
+            → Xen<br>
+            <a href="https://nanovms.gitbook.io/ops/bhyve">Bhyve</a><br><br>
+            <a href="https://nanovms.gitbook.io/ops/vsphere">→ ESX</a><br>
+            <a href="https://nanovms.gitbook.io/ops/firecracker">FireCracker</a><br>
+            <a href="https://nanovms.gitbook.io/ops/virtual_box">VirtualBox</a><br>
+            <a href="https://nanovms.gitbook.io/ops/hyper-v">→ Hyper-V</a><br><br>
+            <a style="color: var(--descr-color)" href="https://nanovms.gitbook.io/ops/k8s">Nanos can even run on
+                K8S.</a>
+        </p>
+
+        <h2 id="syscalls" class="title right__title">
+            Syscalls
+        </h2>
+        <p class="description right__description">
+
+<h3>Supported:</h3>
+
+<pre>
+socket
+bind
+listen
+accept
+accept4
+connect
+sendto
+sendmsg
+sendmmsg
+recvfrom
+recvmsg
+setsockopt
+getsockname
+getpeername
+getsockopt
+shutdown
+futex
+clone
+arch_prctl
+set_tid_address
+gettid
+timerfd_create
+timerfd_gettime
+timerfd_settime
+timer_create
+timer_settime
+timer_gettime
+timer_getoverrun
+timer_delete
+getitimer
+setitimer
+alarm
+mincore
+mmap
+mremap
+msync
+munmap
+mprotect
+epoll_create
+epoll_create1
+epoll_ctl
+poll
+ppoll
+select
+pselect6
+epoll_wait
+epoll_pwait
+read
+pread64
+write
+pwrite64
+open
+openat
+dup
+dup2
+dup3
+fstat
+fallocate
+fadvise64
+sendfile
+stat
+lstat
+readv
+writev
+truncate
+ftruncate
+fdatasync
+fsync
+sync
+syncfs
+io_setup
+io_submit
+io_getevents
+io_destroy
+access
+lseek
+fcntl
+ioctl
+getcwd
+symlink
+symlinkat
+readlink
+readlinkat
+unlink
+unlinkat
+rmdir
+rename
+renameat
+renameat2
+close
+sched_yield
+brk
+uname
+getrlimit
+setrlimit
+prlimit64
+getrusage
+getpid
+exit_group
+exit
+getdents
+getdents64
+mkdir
+mkdirat
+getrandom
+pipe
+pipe2
+socketpair
+eventfd
+eventfd2
+creat
+chdir
+fchdir
+utime
+utimes
+newfstatat
+sched_getaffinity
+sched_setaffinity
+capget
+prctl
+sysinfo
+umask
+statfs
+fstatfs
+io_uring_setup
+io_uring_enter
+io_uring_register
+kill
+pause
+rt_sigaction
+rt_sigpending
+rt_sigprocmask
+rt_sigqueueinfo
+rt_tgsigqueueinfo
+rt_sigreturn
+rt_sigsuspend
+rt_sigtimedwait
+sigaltstack
+signalfd
+signalfd4
+tgkill
+tkill
+clock_gettime
+clock_nanosleep
+gettimeofday
+nanosleep
+time
+times
+inotify_init
+inotify_add_watch
+inotify_rm_watch
+inotify_init1
+</pre>
+
+<h3>unsupported:</h3>
+
+<pre>
+shmget
+shmat
+shmctl
+fork
+vfork
+execve
+wait4, syscall_ignore);
+semget
+semop
+semctl
+shmdt
+msgget
+msgsnd
+msgrcv
+msgctl
+flock, syscall_ignore);
+link
+chmod, syscall_ignore);
+fchmod, syscall_ignore);
+fchown, syscall_ignore);
+lchown, syscall_ignore);
+ptrace
+syslog
+getgid, syscall_ignore);
+getegid, syscall_ignore);
+setpgid
+getppid
+getpgrp
+setsid
+setreuid
+setregid
+getgroups
+setresuid
+getresuid
+setresgid
+getresgid
+getpgid
+setfsuid
+setfsgid
+getsid
+mknod
+uselib
+personality
+ustat
+sysfs
+getpriority
+setpriority
+sched_setparam
+sched_getparam
+sched_setscheduler
+sched_getscheduler
+sched_get_priority_max
+sched_get_priority_min
+sched_rr_get_interval
+mlock, syscall_ignore);
+munlock, syscall_ignore);
+mlockall, syscall_ignore);
+munlockall, syscall_ignore);
+vhangup
+modify_ldt
+pivot_root
+_sysctl
+adjtimex
+chroot
+acct
+settimeofday
+mount
+umount2
+swapon
+swapoff
+reboot
+sethostname
+setdomainname
+iopl
+ioperm
+create_module
+init_module
+delete_module
+get_kernel_syms
+query_module
+quotactl
+nfsservctl
+getpmsg
+putpmsg
+afs_syscall
+tuxcall
+security
+readahead
+setxattr
+lsetxattr
+fsetxattr
+getxattr
+lgetxattr
+fgetxattr
+listxattr
+llistxattr
+flistxattr
+removexattr
+lremovexattr
+fremovexattr
+set_thread_area
+io_cancel
+get_thread_area
+lookup_dcookie
+epoll_ctl_old
+epoll_wait_old
+remap_file_pages
+restart_syscall
+semtimedop
+clock_settime
+vserver
+mbind
+set_mempolicy
+get_mempolicy
+mq_open
+mq_unlink
+mq_timedsend
+mq_timedreceive
+mq_notify
+mq_getsetattr
+kexec_load
+waitid
+add_key
+request_key
+keyctl
+ioprio_set
+ioprio_get
+migrate_pages
+mknodat
+fchownat, syscall_ignore);
+futimesat
+linkat
+fchmodat, syscall_ignore);
+faccessat
+unshare
+set_robust_list
+get_robust_list
+splice
+tee
+sync_file_range
+vmsplice
+move_pages
+utimensat
+preadv
+pwritev
+perf_event_open
+recvmmsg
+fanotify_init
+fanotify_mark
+name_to_handle_at
+open_by_handle_at
+clock_adjtime
+setns
+getcpu
+process_vm_readv
+process_vm_writev
+kcmp
+finit_module
+sched_setattr
+sched_getattr
+seccomp
+memfd_create
+kexec_file_load
+bpf
+execveat
+userfaultfd
+membarrier
+mlock2, syscall_ignore);
+copy_file_range
+preadv2
+pwritev2
+pkey_mprotect
+pkey_alloc
+pkey_free
+</pre>
+        </p>
+
+        <h2 id="features" class="title right__title">
+            Features
+        </h2>
+        <p class="description right__description">
+            → -d strace<br> → ftrace<br> → http server dump
+        </p>
+
+        <h2 id="tools" class="title right__title">
+            Tools
+        </h2>
+        <p class="description right__description">
+        Several tools are packaged inside Nanos:
+
+        mkfs
+
+<pre><code>➜  ~ ~/.ops/0.1.27/mkfs -help
+/Users/eyberg/.ops/0.1.27/mkfs: illegal option -- h
+Usage:
+mkfs [options] image-file < manifest-file
+mkfs [options] -e image-file
+Options:
+-b boot-image   - specify boot image to prepend
+-k kern-image   - specify kernel image
+-r target-root  - specify target root
+-s image-size   - specify minimum image file size; can be expressed in
+bytes, KB (with k or K suffix), MB (with m or M suffix), and GB (with g
+or G suffix)
+-e              - create empty filesystem</code></pre>
+
+<h3>
+dump
+</h3>
+<br><br>
+
+<pre><code>➜  ~ ~/.ops/0.1.27/dump
+Usage: dump [OPTION]... <fs image>
+Options:
+  -d <target dir>       Copy filesystem contents from <fs image> into <target dir>
+  -t                    Display filesystem from <fs image> as a tree</code></pre>
+
+There are also development tools available such as plugins for various
+editors:
+
+<a href="https://marketplace.visualstudio.com/items?itemName=nanovms.ops">OPS for Visual Studio</a>
+<br/>
+<a href="https://plugins.jetbrains.com/plugin/16899-nanovms-ops">IntelliJ</a>
+
+        </p>
+
+        <h2 id="manifest" class="title right__title">
+            Manifest
+        </h2>
+        <p class="description right__description">
+            The nanos manifest is an extremely powerful tool as it comes with many different flags and is the synthesis
+            of a filesystem merged with various settings. Most users will never craft their own manifests by hand,
+            opting to use OPS to craft it automatically.<br><br> → futex_trace<br> → debugsyscalls<br> → fault<br> →
+            exec_protect
+        </p>
+
+        <h2 id="data_structures" class="title right__title">
+            Data Structures
+        </h2>
+        <p class="description right__description">
+          Nanos uses a variety of internal data structures. This is only a partial list.
+          <ul>
+            <li><a href="#bitmaps">Bitmap</a></li>
+            <li><a href="#idheaps">ID Heap</a></li>
+            <li><a href="https://github.com/nanovms/nanos/blob/master/src/runtime/heap/freelist.c">FreeList</a></li>
+            <li><a href="https://github.com/nanovms/nanos/blob/master/src/runtime/heap/heap.h">Backed Heap</a></li>
+            <li><a href="#linearbackedheaps">Linear Backed Heap</a></li>
+            <li><a href="#pagebackedheaps">Paged Back Heap</a></li>
+            <li><a href="https://github.com/nanovms/nanos/blob/master/src/runtime/pqueue.h">Priority Queue</a></li>
+            <li><a href="https://github.com/nanovms/nanos/blob/master/src/runtime/range.h">RangeMap</a></li>
+            <li><a href="#rbtrees">Red/Black Tree</a></li>
+            <li><a href="https://github.com/nanovms/nanos/blob/master/src/runtime/sg.h">Scatter/Gather List</a></li>
+            <li><a href="https://github.com/nanovms/nanos/blob/master/src/runtime/table.h">Table</a></li>
+            <li><a href="https://github.com/nanovms/nanos/blob/master/src/runtime/tuple.h">Tuple</a></li>
+          </ul>
+        </p>
+        <h2 id="bitmaps" class="title right__title">
+            Bitmaps
+        </h2>
+	<p class="description right__description">A bitmap is an array of bits to store binary variables. A bitmap is represented with the <strong>struct bitmap</strong> (see <a href="https://github.com/nanovms/nanos/blob/master/src/runtime/bitmap.h">bitmap.h</a>):</p>
+	  <pre><code>typedef struct bitmap {
+  u64 maxbits;
+  u64 mapbits;
+  heap meta;
+  heap map;
+  buffer alloc_map;
+} *bitmap;</code></pre>
+          <ul>
+            <li><strong>maxbits</strong> is the number of bits that the bitmap contains</li>
+            <li><strong>mapbits</strong> is the number of bits that has been allocated for this bitmap which is rounded up to the nearest 64 bits</li>
+            <li><strong>meta</strong> is the heap to allocate the bitmap structure</li>
+            <li><strong>map</strong> is the heap to allocate the bitmap buffer</li>
+            <li><strong>alloc_map</strong> is the buffer that contains the actual bitmap</li>
+          </ul>
+  <p class="description right__description">
+    The bitmap length may be arbitrarily sized. The bitmap buffer is allocated in ALLOC_EXTEND_BITS / 8 byte increments as needed. In the following, we present the functions that manipulate bitmaps.</p>
+        </p>
+	<h2 id="instantiation" class="title right__title">
+            Instantiation
+        </h2>
+	<p class="description right__description">
+	  <strong>allocate_bitmap</strong> allocates and initializes a bitmap structures. The function is defined as follows:
+          <pre><code>bitmap allocate_bitmap(heap meta, heap map, u64 length)
+{
+  bitmap b = allocate_bitmap_internal(meta, length);
+  if (b == INVALID_ADDRESS)
+    return b;
+  u64 mapbytes = b->mapbits >> 3;
+  b->map = map;
+  b->alloc_map = allocate_buffer(map, mapbytes);
+  if (b->alloc_map == INVALID_ADDRESS)
+    return INVALID_ADDRESS;
+  zero(bitmap_base(b), mapbytes);
+  buffer_produce(b->alloc_map, mapbytes);
+  return b;
+}</code></pre>
+  <p class="description right__description">
+	  This function begins by allocating the memory for the bitmap structure by using the heap at <strong>meta</strong>. This is done by the function <strong>allocate_bitmap_internal</strong>. The function initializes the heap used by the bitmap to <strong>meta</strong>. It sets <strong>mapbits</strong> to <strong>lenght</strong> by padding to the nearest 64 bit multiple. <strong>mapbits</strong> can't be greater than ALLOC_EXTEND_BITS or 4096 bits. <strong>maxbits</strong> is initialized to <strong>lenght</strong>. The function allocates the memory for the actual bitmap. At line 6, <strong>mapbytes</strong> contains the size of the bitmap in bytes. In line 8, the function <strong>allocate_buffer</strong> gets a buffer of size <strong>mapbytes</strong>. In line 11, this chunk is filling with zeros, and in line 12, the buffer is created. This is needed because the buffer buffer structure tracks the start and end points of the data in the allocated memory. While <strong>allocate_buffer</strong> allocates the required memory, <strong>buffer_produce</strong> moves the end pointer to mark that memory as used by the buffer and not available to grow into. Note that the allocation of a bitmap relies on different memory allocators (heaps) optimized for different tasks. One heap is using for metadata, i.e., meta, and one for data, i.e., map. If success, the function returns a pointer to a bitmap structure; otherwise, it returns <strong>INVALID_ADDRESS</strong>.</p> 
+          <pre><code>bitmap bitmap_clone(bitmap b)</code></pre>
+	  <p class="description right__description">
+	  <strong>bitmap_clone</strong> can be used to allocate a new bitmap from an existing one. The function returns a bitmap which is a copy of the bitmap at <strong>b</strong>.</p>
+	<p class="description right__description">
+  To release a bitmap, the caller uses the function <strong>deallocate_bitmap</strong>, which is defined as follows:</p>
+          <pre><code>void deallocate_bitmap(bitmap b)
+  {
+    if (b->alloc_map)
+    deallocate_buffer(b->alloc_map);
+    deallocate(b->meta, b, sizeof(struct bitmap));
+  }</code></pre>
+		<p class="description right__description">
+   The function first releases the buffer that contains the bitmap, and then, it releases the bitmap structure.</p>
+	  <pre><code>bitmap bitmap_wrap(heap h, u64 * map, u64 length)
+void bitmap_unwrap(bitmap b)</code></pre>
+	<p class="description right__description">
+    <strong>bitmap_wrap</strong> creates a bitmap structure from an already existing bitmap. This function reuses the bitmap at <strong>map</strong> so no allocation of a new bitmap is required.</p>
+  	<p class="description right__description">
+    <strong>bitmap_unwrap</strong> releases the wrapped buffer by releasing the buffer structure and the bitmap structure.</p> 
+	</p>
+	<h2 id="accessors" class="title right__title">
+            Accessors
+        </h2>
+	<p class="description right__description">
+	  <pre><code class="language-C">u64 bitmap_alloc(bitmap b, u64 size);
+u64 bitmap_alloc_within_range(bitmap b, u64 nbits, u64 start, u64 end);</code></pre>
+  	<p class="description right__description">
+	        <strong>bitmap_alloc</strong> searches a bitmap for a range of nbits consecutive bits that are all cleared, and if such a range is found, sets all bits in the range and returns the first bit of the range; if not found, returns INVALID_PHYSICAL. The function <strong>bitmap_alloc_within_range</strong> behaves similarly than <strong>bitmap_alloc</strong> but it takes as parameter a range in which the region is searched.</p>
+	  <pre><code>boolean bitmap_dealloc(bitmap b, u64 bit, u64 size);</code></pre>
+	  	<p class="description right__description">
+	  <strong>bitmap_dealloc</strong> checks that the range of <strong>size</strong> bits starting from <strong>bit</strong> is set in the bitmap <strong>b</strong>; if this is true, the function clears all the bits in that range and returns </strong>true</strong>, otherwise it returns <strong>false</strong>.
+</p>
+	  <pre><code class="language-C">static inline void bitmap_set(bitmap b, u64 i, int val);
+static inline void bitmap_set_atomic(bitmap b, u64 i, int val);
+static inline int bitmap_test_and_set_atomic(bitmap b, u64 i, int val);</code></pre>
+    <p class="description right__description"><strong>bitmap_set</strong> changes the value of the <strong>i</strong>th bit in the bitmap <strong>b</strong> depending on the value of <strong>val</strong>. If val is greater than zero, the bit is set; otherwise, the bit is cleared. The function <strong>bitmap_set_atomic</strong> sets a bit by using atomic operations. <strong>bitmap_test_and_set_atomic</strong> set or clear a bit depending on <strong>val</strong>. If true, the bit at <strong>i</strong> is set; otherwise, the bit is clear. This function is atomic.</p>
+          <pre><code class="language-C">static inline boolean bitmap_get(bitmap b, u64 i);</code></pre>
+    <p class="description right__description">
+          <strong>bitmap_get</strong> returns the value of the <strong>i</strong> bit from the bitmap <strong>b</strong>.
+          The following macros are used to iterate over the elements of a bitmap:</p>
+          <pre><code class="language-C">#define bitmap_foreach_word(b, w, offset)				\
+  for (u64 offset = 0, * __wp = bitmap_base(b), w = *__wp;		\
+  offset < (b)->mapbits; offset += 64, w = *++__wp)
+
+#define bitmap_word_foreach_set(w, bit, i, offset)			\
+  for (u64 __w = (w), bit = lsb(__w), i = (offset) + (bit); __w;      \
+  __w &= ~(1ull << (bit)), bit = lsb(__w), i = (offset) + (bit))
+
+#define bitmap_foreach_set(b, i)					\
+  bitmap_foreach_word((b), _w, s) bitmap_word_foreach_set(_w, __bit, (i), s)</code></pre>
+    <p class="description right__description">
+	  The macro <strong>bitmap_foreach_word</strong> is used to walk a bitmap in 64 bits chunks by starting from <strong>offset</strong>.
+          The macro <strong>bitmap_word_foreach_set</strong> is used to walk a chunk of 64 bits.
+          The macro <strong>bitmap_foreach_set</strong> is used to walk a bitmap.
+          For example, the following code uses <strong>bitmap_foreach_set</strong> to walk the bitmap and checks if it has been correctly initialized:</p> 
+          <pre><code class="language-C">bitmap b = allocate_bitmap(h, h, 4096);
+bitmap_foreach_set(b, i) {
+  if (i) {
+    msg_err("!!! allocation failed for bitmap\n");
+    return NULL; 
+  }
+}</pre></code>
+          <pre><code class="language-C">void bitmap_copy(bitmap dest, bitmap src)</code></pre>
+    <p class="description right__description">
+          <strong>bitmap_copy</strong> copies the bitmap at
+<strong>src</strong> into the bitmap at <strong>dest</strong>. In case
+<strong>src</strong> is larger than <strong>dst</strong>, i.e.,
+<strong>src.maxbits > dst.maxbits</strong>, <strong>dst</strong> is
+extended. The extended bits are cleared.</p>
+          <pre><code class="language-C">boolean bitmap_range_check_and_set(bitmap b, u64 start, u64 nbits, boolean validate, boolean set);</code></pre>
+    <p class="description right__description">
+          <strong>bitmap_range_check_and_set</strong> sets a number of <strong>nbits</strong> by starting from <strong>start</strong> with the
+value at <strong>set</strong>. if <strong>validate</strong> is true, the
+function checks whether all bits in the supplied bit range are cleared
+in the bitmap before attempting to set them; otherwise, this check is
+skipped and the bits are set regardless of whether they were already
+set.</p>
+          <pre><code class="language-C">u64 bitmap_range_get_first(bitmap b, u64 start, u64 nbits)</code></pre>
+    <p class="description right__description">
+         <strong>bitmap_range_get_first</strong> returns the first bit set in a given range, or INVALID_PHYSICAL if no bits are set.</p>
+	</p>
+        <h2 id="rbtrees" class="title right__title">
+            Red/Black Trees
+        </h2>
+	<p class="description right__description">
+          A rbtree (see <a
+href="https://github.com/nanovms/nanos/blob/master/src/runtime/rbtree.h">rbtree.h</a>)
+is represented with the following structure:</p>
+          <pre><code class="language-C">typedef struct rbtree {
+  rbnode root;
+  u64 count;
+  rb_key_compare key_compare;
+  rbnode_handler print_key;
+  heap h;
+} *rbtree</code></pre>
+          <ul>
+            <li><strong>root</strong> is a pointer to the root node of tree</li>
+	    <li><strong>count</strong> is a counter of the number of nodes in the tree</li>
+	    <li><strong>print_key</strong> is a function to print nodes</li>
+	    <li><strong>key_compare</strong> is the comparator function to compare nodes</li>
+	    <li><strong>head h</strong> is the heap to allocate the nodes</li>
+          </ul>
+			<p class="description right__description">
+    Each node in a rbtree is defined as follows:
+</p>
+           <pre><code class="language-C">typedef struct rbnode *rbnode;
+struct rbnode {
+  word parent_color;           /* parent used for verification */
+  rbnode c[2];
+};</code></pre>
+ 		<p class="description right__description">
+	  <ul>
+            <li><strong>parent_color</strong> is the color of the parent</li>
+	    <li><strong>c[2]</strong> is an array of rbnodes that identifies each child</li>
+          </ul></p>
+
+	<p class="description right__description">
+	  The color of a node is defines as follows:
+            <pre><code class="language-C">#define black 0
+#define red 1</code></pre>
+	</p>
+	<h2 id="instantiation" class="title right__title">
+            Instantiation
+        </h2>
+	<p class="description right__description">Rbtrees are instantiated by using the function <strong>allocate_rbtree()</strong>:</p>
+      <pre><code class="language-C">rbtree allocate_rbtree(heap h, rb_key_compare key_compare, rbnode_handler print_key);</code></pre>
+      <p class="description right__description">The function returns a pointer to a new rbtree. When defining a new rbtree, we require to define the comparator function, e.g., <strong>thread_tid_compare</strong>, and the function to print keys, e.g., <strong>tid_print_key</strong>. For example, the following code shows the creation of the rbtree that keeps all the threads of the system:</p>
+       <pre><code class="language-C">p->threads = allocate_rbtree(h, closure(h, thread_tid_compare), closure(h, tid_print_key)</code></pre>
+       <p class="description right__description">We use the macros <strong>closure</strong> and <strong>closure_function</strong> for the definition of the functions:</p>
+          <pre><code class="language-C">closure_function(0, 2, int, thread_tid_compare,
+                 rbnode, a, rbnode, b)
+{
+  thread ta = struct_from_field(a, thread, n);
+  thread tb = struct_from_field(b, thread, n);
+  return ta->tid == tb->tid ? 0 : (ta->tid < tb->tid ? -1 : 1);
+}
+  closure_function(0, 1, boolean, tid_print_key,
+                 rbnode, n)
+{
+  rprintf(" %d", struct_from_field(n, thread, n)->tid);
+  return true;
+}</code></pre>
+        <p class="description right__description">A rbtree can be initialized by using the function <strong>init_rbtree()</strong>:</p>
+          <pre><code class="language-C">void init_rbtree(rbtree t, rb_key_compare key_compare, rbnode_handler print_key);</code></pre>
+         <p class="description right__description">This function is used in the same way than <strong>allocate_rbtree()</strong>:</p>
+            <pre><code class="language-C">init_rbtree(&rm->t, closure(h, rmnode_compare), closure(h, print_key));</code></pre>
+        </p>
+       <h2 id="accesors" class="title right__title">
+            Accesors
+       </h2>
+       <p class="description right__description ">The insertion of a node is done by the function <strong>rbtree_insert_node()</strong>:</p>
+         <pre><code>boolean rbtree_insert_node(rbtree t, rbnode n);</code></pre>
+       <p class="description right__description ">
+         This function returns true if the rbtree has no root node so node is inserted in the root position; it returns false otherwise. The insertion of a node is based on the the comparator function.
+         The traverse of a rbtree is done by the function <strong>rbtree_traverse()</strong>:</p>
+             <pre><code class="language-C">#define RB_INORDER 0
+#define RB_PREORDER 1
+#define RB_POSTORDER 2
+boolean rbtree_traverse(rbtree t, int order, rbnode_handler rh);</code></pre>
+       <p class="description right__description ">
+         This function takes as parameters the rbtree to traverse, the order in which the rbtree is traversed, e.g., INORDER, and the function called for each node.
+         The function <strong>rbtree_lookup()</strong> is used to look for a node. The function uses the comparator over all the tree's nodes to compare with the <strong>rbnode k</strong>.</p>
+         <pre><code class="language-C">rbnode rbtree_lookup(rbtree t, rbnode k);</code></pre>
+        <p class="description right__description ">
+          If success, the function returns a pointer to a node; or <strong>INVALID_ADDRESS</strong> otherwise.
+         The function <strong>rbtree_remove_by_key()</strong> is used to remove a node by a key:</p>
+         <pre><code class="language-C">boolean rbtree_remove_by_key(rbtree t, rbnode k);</code></pre>
+         <p class="description right__description ">
+         When success, the function returns true; or false otherwise.
+         The function <strong>rbtree_dump()</strong> is used to dump a tree. The function is defined as follows:</p>
+         <pre><code class="language-C">void rbtree_dump(rbtree t, int order);</code></pre>
+         <p class="description right__description ">
+         The function gets as parameters the rbtree and the order in which the tree is traversed.
+        The function <strong>remove_min()</strong> allows to get the node with the minimum key:</p>
+          <pre><code class="language-C">static rbnode remove_min(rbnode h, rbnode *removed)</code></pre>
+          <p class="description right__description ">
+         The functions <strong>rbnode_get_prev()</strong> and <strong>rbnode_get_next()</strong> are meant to get the next and the previous node from a given key:</p>
+         <pre><code class="language-C">rbnode rbnode_get_prev(rbnode h);
+rbnode rbnode_get_next(rbnode h);</code></pre>
+         <p class="description right__description ">These functions return <strong>INVALID_ADDRESS</strong> when the node is not found.</p>
+       <h2 id="releasing" class="title right__title">
+        Releasing
+       </h2>
+       <p class="description right__description">
+         The function <strong>destruct_rbtree()</strong> is used to release each node in a rbtree. The function is defined as follows:</p>
+         <pre><code class="language-C">void destruct_rbtree(rbtree t, rbnode_handler destructor);</code></pre>
+        <p class="description right__description">
+         The rbtree is traversed and the destructor is called for each node. The function resets the root node of the rbtree. The function does not release the rbtree itself.
+         The function <strong>deallocate_rbtree()</strong> is used to release all the nodes and the rbtree. This function is defined as follows:</p> 
+         <pre><code class="language-C">void deallocate_rbtree(rbtree rb, rbnode_handler destructor);</code></pre>
+         <p class="description right__description">
+         The function first call <strong>destruct_rbtree()</strong> and then it releases the rbtree structure.</p>
+         <h2 id="idheaps" class="title right__title">
+            ID Heap
+         </h2>
+         <p class="description right__description">Nanos allows developers to define different memory allocators named heaps optimized for different tasks. Rather than having a couple of heap allocation functions like Linux's kmalloc or vmalloc, Nanos uses a heap interface with allocate and deallocate function pointers that can be different for each heap structure. This results in a very flexible memory allocation. Developers can create hierarchies of heaps, or trivially change one heap to a special debug heap to help with troubleshooting. This section presents the API to manipulate Id Heaps (see <a href="https://github.com/nanovms/nanos/blob/master/src/runtime/heap/id.h">id.h</a>). These are general purpose allocators that carve up number space from a set of ranges that may be specified on initialization.</p>
+         <h2 id="instantiation" class="title right__title">
+          Instantiation
+         </h2>
+         <p class="description right__description">To create an Id heap, we use the function <strong>create_id_heap()</strong>:</p>
+         <pre><code class="language-C">id_heap create_id_heap(heap meta, heap map, u64 base, u64 length, bytes pagesize, boolean locking);</code></pre>
+         <p class="description right__description">
+          <ul>
+           <li><strong>meta</strong> is the heap to allocate the metadata for the new heap</li>
+           <li><strong>map</strong> is the heap to allocate a bitmap to store the used elements</li>
+           <li><strong>base</strong> is the starting address of the chunk that is allocated</li>
+           <li><strong>length</strong> is the size of the chunk that is allocated</li>
+           <li><strong>pagesize</strong> is the minimum size of the allocations</li>
+           <li><strong>locking</strong> is a boolean variable that indicates that the heap may be accessed concurrently so accesses must be protected by using locking mechanisms</li>
+          </ul>
+         </p>
+         <p class="description right__description">The function returns an <strong>id_heap</strong> that can be used to allocate chunks of memory by using the function <strong>allocate()</strong>:</p>
+         <pre><code class="language-C">void * addr = allocate(id, PAGE_SIZE);</code></pre>
+         <p class="description right__description">This returns a pointer to a chunk of memory of <strong>PAGE_SIZE</strong> size. The size of the allocation must be greater or equal to the page size that is defined when the heap is created. This is not to be confused with the system page size, although allocators meant to serve allocations in page-sized units do indeed have a pagesize value equivalent to the system page size.</p>
+         <p class="description right__description">The function <strong>create_id_heap_backed()</strong> allows developers to create hierarchical heaps:</p>
+         <pre><code class="language-C">id_heap create_id_heap_backed(heap meta, heap map, heap parent, bytes pagesize, boolean locking)</code></pre>
+         <p class="description right__description">The function requires the <strong>heap parent</strong> argument from which the new heap goes to allocate new ranges of address space with allocations being a minimum of the parent heap page size.</p>
+         <h2 id="releasing" class="title right__title">
+          Releasing
+         </h2>
+         <p class="description right__description">To de-allocate a chunk of memory, we use the <strong>deallocate()</strong> function:</p>
+         <pre><code class="language-C">deallocate(id, addr, PAGE_SIZE);</code></pre>
+         <p class="description right__description">We use the function named <strong>destroy_heap(id)</strong> to release all the resources allocated by the heap.</p>
+         <h2 id="pagebackedheaps" class="title right__title">
+            Page-backed Heap
+         </h2>
+         <p class="description right__description">The page-backed heap allocates in page-size units (see <a href="https://github.com/nanovms/nanos/blob/master/src/kernel/page_backed_heap.c">here</a>). A page-backed heap is represented with the <strong>page_backed_page</strong> structure:</p>
+         <pre><code class="language-C">typedef struct page_backed_heap {
+    struct backed_heap bh;
+    heap physical;
+    heap virtual;
+    struct spinlock lock;
+} *page_backed_heap;
+         </code></pre>
+         <p class="description right__description">Each address space is represented with a different heap: the <strong>physical</strong> and the <strong>virtual</strong> heap. The function allocates from both heaps an creates a mapping between them. The page-backed heap is required for individual pages that need different protection flags or otherwise need to have mappings manipulated for some reason.</p>
+         <h2 id="instantiation" class="title right__title">
+          Instantiation
+         </h2>
+         <p class="description right__description">The instantiation of a page_backed heap is done by the function:</p>
+         <pre><code class="language-C">backed_heap allocate_page_backed_heap(heap meta, heap virtual, heap physical, u64 pagesize, boolean locking)</code></pre>
+         <p class="description right__description">The function takes three heaps as arguments: one for the meta, one for the virtual address and one for the physical. In this heap, the pagesize corresponds with the page-size units of the architecture.</p>
+         <p class="description right__description">The <strong>page_backed_alloc_map()</strong> function is used to allocate a number of bytes from the page-backed heap:</p>
+         <pre><code class="language-C">static inline void *page_backed_alloc_map(backed_heap bh, bytes len, u64 *phys)</code></pre>
+         <p class="description right__description">The number of bytes in <strong>len</strong> are allocated from both heaps. The function also maps the physical address into the virtual address. In <strong>phys</strong>, It returns the pointer to the physical address. The function returns a pointer to the virtual address.</p>
+         <p class="description right__description">The <strong>page_backed_alloc_map_locking()</strong> function is used when mutual exclusion is required during allocation. The function is declared as follows:</p>
+         <pre><code class="language-C">void *page_backed_alloc_map_locking(backed_heap bh, bytes len, u64 *phys)</code></pre>
+         <h2 id="instantiation" class="title right__title">
+          Releasing
+         </h2>
+         <p class="description right__description">The <strong>page_backed_dealloc()</strong> function is used for the deallocation. It is based on <strong>page_backed_dealloc_unmap()</strong> for the unmapping between the virtual and the physical address. The function is declared as follows:</p>
+         <pre><code class="language-C">void page_backed_dealloc(heap h, u64 x, bytes length)</code></pre>
+         <p class="description right__description">When mutual exclusion is required during deallocation, developers can use the <strong>page_backed_dealloc_locking()</strong> function:</p>
+         <pre><code class="language-C">static void page_backed_dealloc_locking(heap h, u64 x, bytes length)</code></pre>
+         <h2 id="linearbackedheaps" class="title right__title">
+            Linear-backed Heap
+         </h2>
+         <p class="description right__description">The linear-backed heap takes advantage of the largest available pagesize on the architecture. The heap maps all physical memory that is allocated and thus memory can be accessed through the linear mapping without the need to set up a mapping for each allocation. A linear-backed heap is represented with the <strong>linear_backed_page</strong> structure (see <a href="https://github.com/nanovms/nanos/blob/master/src/kernel/linear_backed_heap.c">here</a>):</p>
+         <pre><code class="language-C">typedef struct linear_backed_heap {
+    struct backed_heap bh;
+    heap meta;
+    id_heap physical;
+    bitmap mapped;
+} *linear_backed_heap;
+</code></pre>
+         <p class="description right__description">The <strong>physical</strong> is the id heap from where the physical chunks are allocated.</p>
+         <h2 id="instantiation" class="title right__title">
+          Instantiation
+         </h2>
+         <p class="description right__description">The instantiation of a linear-backed heap is done by using the <strong>allocate_linear_backed_heap()</strong> function:</p>
+         <pre><code class="language-C">backed_heap allocate_linear_backed_heap(heap meta, id_heap physical)</code></pre>
+         <p class="description right__description">The first parameter corresponds with the heap that is used for bitmap allocation. The second parameter corresponds with the id_heap for the physical memory allocation. The function returns a <strong>backed_heap</strong> structure. During the allocation of the linear-backed heap, the whole physical heap is mapped by relying on the function <strong>linear_backed_init_maps()</strong>. This function iterates through the phys id heap ranges and adds the required mappings. The physical memory is mapped at a fixed offset for all memory supported by the linear backed heap. This is an advantage over the page-backed heap because a lookup within page table memory is not necessary.</p>
+         <p class="description right__description">The <strong>linear_backed_alloc()</strong> function allocates size bytes:</p>
+         <pre><code class="language-C">static u64 linear_backed_alloc(heap h, bytes size)</code></pre>
+         <p class="description right__description">This function returns the physical address of the chunk.</p>
+         <p class="description right__description">The <strong>linear_backed_alloc_map()</strong> allocates size bytes and maps it. The function returns the physical address of the new allocation at <strong>phys</strong>:</p>
+         <pre><code class="language-C">static void *linear_backed_alloc_map(backed_heap bh, bytes len, u64 *phys)</code></pre>
+         <h2 id="instantiation" class="title right__title">
+          Releasing
+         </h2>
+          <p class="description right__description">The deallocation is done by using the <strong>linear_backed_dealloc()</strong> function:</p>
+         <pre><code class="language-C">static void linear_backed_dealloc(heap h, u64 x, bytes size)</code></pre>
+         <p class="description right__description">The <strong>linear_backed_dealloc_unmap()</strong> function deallocates and unmaps a chunk of memory of len bytes which is located at the <strong>*virt</strong> virtual address and the <strong>phys</strong> physical address:</p>
+         <pre><code class="language-C">static void linear_backed_dealloc_unmap(backed_heap bh, void *virt, u64 phys, bytes len)</code></pre>
+         </div>
+</main>
+
+<footer class="block footer__pc">
+    <div class="footer__box">
+        <span>Copyright © 2024 NanoVMs Inc. All rights reserved.</span>
+        <a class="footer__link footer__link_reset-mg" href="https://nanovms.com/">
+            <span>NanoVMs</span>
+        </a>
+    </div>
+    <div class="footer__box">
+        <div>
+            <a class="footer__link" href="/privacy">
+                <span>Privacy Policy</span>
+            </a>
+            <a class="footer__link" href="/terms">
+                <span>Terms of Service</span>
+            </a>
+        </div>
+        <div>
+            <a class="footer__link" href="https://twitter.com/nanovms">
+                <span>Twitter</span>
+            </a>
+            <a class="footer__link" href="https://github.com/nanovms/nanos">
+                <span>Github</span>
+            </a>
+            <a class="footer__link" href="https://groups.google.com/a/nanovms.com/g/nanos-users">
+                <span>Mailing List</span>
+            </a>
+            <a class="footer__link footer__link_reset-mg" href="#">
+                <span>IRC</span>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<footer class="block footer__mobile">
+    <div class="footer__box">
+        <span>Copyright © 2024 NanoVMs Inc. All rights reserved.</span>
+        <div class="footer__box-wrap">
+            <a class="footer__link" href="/privacy">
+                <span>Privacy Policy</span>
+            </a>
+            <a class="footer__link" href="/terms">
+                <span>Terms of Service</span>
+            </a>
+            <a class="footer__link" href="https://nanovms.com/">
+                <span>NanoVMs</span>
+            </a>
+            <a class="footer__link" href="https://nanovms.com/services/subscription">
+                <span>Commercial Support</span>
+            </a>
+            <a class="footer__link" href="https://forums.nanovms.com">
+                <span>Forums</span>
+            </a>
+            <a class="footer__link" href="https://twitter.com/nanovms">
+                <span>Twitter</span>
+            </a>
+            <a class="footer__link" href="https://github.com/nanovms/nanos">
+                <span>GitHub</span>
+            </a>
+            <a class="footer__link" href="https://groups.google.com/a/nanovms.com/g/nanos-users">
+                <span>Mailing List</span>
+            </a>
+            <a class="footer__link" href="#">
+                <span>IRC</span>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script src="/static/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>document.addEventListener('DOMContentLoaded', hljs.initHighlightingOnLoad);</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async
+src="https://www.googletagmanager.com/gtag/js?id=G-Q7BKSVLQ4K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q7BKSVLQ4K');
+</script>
+</body>
+</html>

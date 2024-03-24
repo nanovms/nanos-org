@@ -1,0 +1,10 @@
+config.json
+
+.DS_Store
+
+__MACOSX
+nweb
+nanos-org
+
+server.crt
+server.key
