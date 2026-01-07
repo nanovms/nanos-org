@@ -333,12 +333,51 @@ choice.
             Infrastructure
         </h2>
         <p class="description right__description">
+Thread scheduling in Nanos is not cooperative but pre-emptive. CPU-bound threads with
+long running computations are preempted by the kernel in order not to
+starve other threads.
+</p>
+
+        <p class="description right__description">
+Any event that generates an interrupt on a given CPU causes the thread
+running on that CPU to be preempted, at which point the kernel event
+loop processes the event and then resumes one of the threads ready to
+run (which may or may not be the same thread that was just preempted,
+depending on how much CPU time each thread has used). The kernel makes
+sure that a hardware timer is always armed on a CPU before running a
+thread on that CPU, so that the thread is guaranteed to be preempted if
+it runs "for too long".
+</p>
+
+        <p class="description right__description">
+When a thread yields, nothing special happens; the kernel just
+re-evaluates the list of threads ready to run and then resumes one of
+them, in much the same way as done when a thread has been preempted.
+</p>
+
+        <p class="description right__description">
+A scheduling algorithm assigns CPU resources to a task based on how much CPU time the task used in the
+past. It uses a priority queue where tasks are ordered based on their
+CPU time: when a task is enqueued, it is positioned according to the
+time it has been running since it was last scheduled; when a task is
+dequeued, its CPU time is subtracted from the CPU time of any other
+tasks in the queue, so that their priority in the queue is increased.
+This is implemented by storing a reference CPU time in the queue
+(min_runtime struct member), which prevents long-running tasks from
+being starved by newly created tasks.
+This algorithm is applied for scheduling user threads, so that CPU time
+is distributed fairly between all runnable threads.
+</p>
+
+        <p class="description right__description">
             Nanos can currently deploy to the following public cloud providers:<br><br>
             → <a href="https://nanovms.gitbook.io/ops/google_cloud">Google Cloud</a><br>
             → <a href="https://nanovms.gitbook.io/ops/aws">Amazon Web Services</a><br>
             → <a href="https://nanovms.gitbook.io/ops/digital_ocean">Digital Ocean</a><br>
             → <a href="https://nanovms.gitbook.io/ops/vultr">Vultr</a><br>
             → <a href="https://nanovms.gitbook.io/ops/azure">Microsoft Azure</a><br>
+            → <a href="https://nanovms.gitbook.io/ops/hetzner">Hetzner</a><br>
+            → <a href="https://nanovms.gitbook.io/ops/azure">Scaleway</a><br>
             → <a href="https://nanovms.gitbook.io/ops/oci">Oracle Cloud</a><br>
             → <a href="https://nanovms.gitbook.io/ops/upcloud">UpCloud</a><br><br>
             → <a href="https://nanovms.gitbook.io/ops/openstack">OpenStack</a><br><br>
@@ -1106,7 +1145,7 @@ rbnode rbnode_get_next(rbnode h);</code></pre>
 
 <footer class="block footer__pc">
     <div class="footer__box">
-        <span>Copyright © 2025 NanoVMs Inc. All rights reserved.</span>
+        <span>Copyright © 2026 NanoVMs Inc. All rights reserved.</span>
         <a class="footer__link footer__link_reset-mg" href="https://nanovms.com/">
             <span>NanoVMs</span>
         </a>
@@ -1130,16 +1169,13 @@ rbnode rbnode_get_next(rbnode h);</code></pre>
             <a class="footer__link" href="https://groups.google.com/a/nanovms.com/g/nanos-users">
                 <span>Mailing List</span>
             </a>
-            <a class="footer__link footer__link_reset-mg" href="#">
-                <span>IRC</span>
-            </a>
         </div>
     </div>
 </footer>
 
 <footer class="block footer__mobile">
     <div class="footer__box">
-        <span>Copyright © 2025 NanoVMs Inc. All rights reserved.</span>
+        <span>Copyright © 2026 NanoVMs Inc. All rights reserved.</span>
         <div class="footer__box-wrap">
             <a class="footer__link" href="/privacy">
                 <span>Privacy Policy</span>
@@ -1164,9 +1200,6 @@ rbnode rbnode_get_next(rbnode h);</code></pre>
             </a>
             <a class="footer__link" href="https://groups.google.com/a/nanovms.com/g/nanos-users">
                 <span>Mailing List</span>
-            </a>
-            <a class="footer__link" href="#">
-                <span>IRC</span>
             </a>
         </div>
     </div>
